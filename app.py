@@ -5,17 +5,13 @@ from pathlib import Path
 from torchvision import models, transforms
 from utils import sort_uploaded_images
 
-# -------------------------------
 # Config
-# -------------------------------
 st.set_page_config(page_title="Car Photo Sorter", layout="centered")
 st.title("🚗 Car Photo Color Sorter")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# -------------------------------
 # Load Model (cached)
-# -------------------------------
 @st.cache_resource
 def load_model():
     model = models.resnet50(weights=None)
@@ -36,9 +32,7 @@ class_names = ['Black', 'Blue', 'Brown', 'Cyan', 'Green', 'Grey', 'Orange', 'Red
                'White',
                'Yellow']
 
-# -------------------------------
 # Transforms
-# -------------------------------
 val_tfms = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -49,9 +43,7 @@ val_tfms = transforms.Compose([
     )
 ])
 
-# -------------------------------
 # Upload
-# -------------------------------
 uploaded_files = st.file_uploader(
     "Upload car photos",
     type=["jpg", "jpeg", "png", "JPG", "JPEG", "PNG"],
