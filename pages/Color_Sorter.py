@@ -5,7 +5,7 @@ st.title("🎨 Sort by Color")
 
 run_sorter(
     title="Upload car photos",
-    model_path="/car_culler_site/resnet50_car_color_classifier_model.pt",
+    model_path="resnet50_car_color_classifier_model.pt",
     mode="color"
 )
 
