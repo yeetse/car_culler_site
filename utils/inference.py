@@ -89,8 +89,7 @@ def run_sorter(title, model_path, mode):
                     return loaded_model
 
                 model = load_model()
-                class_names = ['Black', 'Blue', 'Brown', 'Cyan', 'Green',
-                               'Grey', 'Orange', 'Red', 'Violet', 'White', 'Yellow']
+                class_names = ['Black', 'Blue', 'Brown', 'Cyan', 'Green', 'Grey', 'Orange', 'Red', 'Violet', 'White', 'Yellow']
 
                 # Transforms
                 val_tfms = transforms.Compose([
